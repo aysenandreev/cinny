@@ -16,21 +16,13 @@ using System.Windows.Shapes;
 namespace Cinny
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SignupPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignupPage : Page
     {
-        public MainWindow()
+        public SignupPage()
         {
             InitializeComponent();
-
-
-            frameMain.Navigate(new StartPage());
-        }
-
-        private void frameMain_Navigated(object sender, NavigationEventArgs e)
-        {
-
         }
     }
 }

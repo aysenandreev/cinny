@@ -16,21 +16,23 @@ using System.Windows.Shapes;
 namespace Cinny
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для StartPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StartPage : Page
     {
-        public MainWindow()
+        public StartPage()
         {
             InitializeComponent();
-
-
-            frameMain.Navigate(new StartPage());
         }
 
-        private void frameMain_Navigated(object sender, NavigationEventArgs e)
+        private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void buttonSignup_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.SignupPage);
         }
     }
 }
