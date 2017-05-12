@@ -25,14 +25,55 @@ namespace Cinny
             InitializeComponent();
         }
 
-        private void textBoxEmail_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void buttonSignup_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(Pages.SignupPage);
+        }
+
+        bool _emailEntered = false;
+
+        private void textBoxEmail_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!_emailEntered)
+            {
+                textBoxEmail.Text = "";
+                textBoxEmail.Foreground = new SolidColorBrush(Colors.Black);
+            }
+        }
+
+        private void textBoxEmail_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxEmail.Text))
+                _emailEntered = true;
+            else
+            {
+                textBoxEmail.Text = "Email address";
+                _emailEntered = false;
+                textBoxEmail.Foreground = new SolidColorBrush(Colors.Gray);
+            }
+        }
+
+        bool _passwordEntered = false;
+
+        private void textBoxPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!_passwordEntered)
+            {
+                textBoxPassword.Text = "";
+                textBoxPassword.Foreground = new SolidColorBrush(Colors.Black);
+            }
+        }
+
+        private void textBoxPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxPassword.Text))
+                _passwordEntered = true;
+            else
+            {
+                textBoxPassword.Text = "Password";
+                _passwordEntered = false;
+                textBoxPassword.Foreground = new SolidColorBrush(Colors.Gray);
+            }
         }
     }
 }

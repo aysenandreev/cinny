@@ -17,6 +17,7 @@
         <TextBox x:Name="textBoxName1" HorizontalAlignment="Left" Height="35" Margin="392,331,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
         <TextBox x:Name="textBoxEmail1" HorizontalAlignment="Left" Height="35" Margin="392,366,0,0" TextWrapping="Wrap" Text="Email address" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
         <TextBox x:Name="textBoxPassword1" HorizontalAlignment="Left" Height="35" Margin="392,401,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
-        <Button x:Name="buttonLogin1" Content="Log In" HorizontalAlignment="Left" Height="21" Margin="474,499,0,0" VerticalAlignment="Top" Width="50" Background="Transparent" BorderBrush="#00000000" Foreground="#FFB0A5A5" FontWeight="Bold" RenderTransformOrigin="-0.32,0.667"/>
+        <Button x:Name="buttonLogin1" Content="Log In" HorizontalAlignment="Left" Height="21" Margin="474,546,0,0" VerticalAlignment="Top" Width="50" Background="Transparent" BorderBrush="#00000000" Foreground="#FFB0A5A5" FontWeight="Bold" RenderTransformOrigin="-0.32,0.667"/>
+        <TextBox x:Name="textBoxAgreement" HorizontalAlignment="Left" Height="42" Margin="392,499,0,0" TextWrapping="Wrap" Text="By clicking 'Sign Up', you agree to our terms of service and privacy policy. We'll occasionally send you account related emails." Background="Transparent" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="10" BorderBrush="#00000000"/>
     </Grid>
 </Page>
