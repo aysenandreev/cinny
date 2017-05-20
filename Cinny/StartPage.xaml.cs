@@ -30,6 +30,8 @@ namespace Cinny
             NavigationService.Navigate(Pages.SignupPage);
         }
 
+        Color color = (Color)ColorConverter.ConvertFromString("#FFCBC2C2");
+
         bool _emailEntered = false;
 
         private void textBoxEmail_GotFocus(object sender, RoutedEventArgs e)
@@ -49,7 +51,7 @@ namespace Cinny
             {
                 textBoxEmail.Text = "Email address";
                 _emailEntered = false;
-                textBoxEmail.Foreground = new SolidColorBrush(Colors.Gray);
+                textBoxEmail.Foreground = new SolidColorBrush(color);
             }
         }
 
@@ -72,7 +74,7 @@ namespace Cinny
             {
                 textBoxPassword.Text = "Password";
                 _passwordEntered = false;
-                textBoxPassword.Foreground = new SolidColorBrush(Colors.Gray);
+                textBoxPassword.Foreground = new SolidColorBrush(color);
             }
         }
     }

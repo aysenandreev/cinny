@@ -6,18 +6,20 @@
       xmlns:local="clr-namespace:Cinny"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-      Title="Cinny" Height="700" Width="1000">
+      Title="Cinny" Height="768" Width="1366">
 
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Resources/mainbackground.jpg" Opacity="1" Stretch="UniformToFill"/>
         </Grid.Background>
-        <Button x:Name="buttonSignup1" Content="Sign Up" HorizontalAlignment="Left" Height="37" Margin="392,457,0,0" VerticalAlignment="Top" Width="214" Background="#FF7699E6" Foreground="#FFF9F5F5" FontSize="16" BorderBrush="Transparent" FontFamily="Yu Gothic UI Semibold"/>
-        <Label x:Name="labelLogo1" Content="Cinny" HorizontalAlignment="Left" Margin="374,221,0,0" VerticalAlignment="Top" Height="88" Width="254" Foreground="#FFF7F4F4" FontSize="75" FontFamily="Broadway" RenderTransformOrigin="0.645,0.518"/>
-        <TextBox x:Name="textBoxName1" HorizontalAlignment="Left" Height="35" Margin="392,331,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
-        <TextBox x:Name="textBoxEmail1" HorizontalAlignment="Left" Height="35" Margin="392,366,0,0" TextWrapping="Wrap" Text="Email address" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
-        <TextBox x:Name="textBoxPassword1" HorizontalAlignment="Left" Height="35" Margin="392,401,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16"/>
-        <Button x:Name="buttonLogin1" Content="Log In" HorizontalAlignment="Left" Height="21" Margin="474,546,0,0" VerticalAlignment="Top" Width="50" Background="Transparent" BorderBrush="#00000000" Foreground="#FFB0A5A5" FontWeight="Bold" RenderTransformOrigin="-0.32,0.667"/>
-        <TextBox x:Name="textBoxAgreement" HorizontalAlignment="Left" Height="42" Margin="392,499,0,0" TextWrapping="Wrap" Text="By clicking 'Sign Up', you agree to our terms of service and privacy policy. We'll occasionally send you account related emails." Background="Transparent" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="10" BorderBrush="#00000000"/>
+        <Button x:Name="buttonSignup1" Content="Sign Up" Height="37" Margin="572,457,0,0" VerticalAlignment="Top" Width="214" Background="#FF7699E6" Foreground="#FFF9F5F5" FontSize="16" BorderBrush="Transparent" FontFamily="Yu Gothic UI Semibold" HorizontalAlignment="Left" Click="buttonSignup1_Click"/>
+        <Label x:Name="labelLogo" Content="Cinny" HorizontalAlignment="Left" Margin="556,220,0,0" VerticalAlignment="Top" Height="88" Width="254" Foreground="#FFF7F4F4" FontSize="75" FontFamily="Broadway" RenderTransformOrigin="0.645,0.518"/>
+        <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="35" Margin="572,366,0,0" TextWrapping="NoWrap" Text="Email address" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16" GotFocus="textBoxEmail_GotFocus" LostFocus="textBoxEmail_LostFocus"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="35" Margin="572,331,0,0" TextWrapping="NoWrap" Text="Name" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16" GotFocus="textBoxName_GotFocus" LostFocus="textBoxName_LostFocus"/>
+        <Button x:Name="buttonLogin1" Content="Log In" HorizontalAlignment="Left" Height="21" Margin="655,571,0,0" VerticalAlignment="Top" Width="50" Background="Transparent" BorderBrush="#00000000" Foreground="#FFB0A5A5" FontWeight="Bold" RenderTransformOrigin="-0.32,0.667" Click="buttonLogin1_Click"/>
+        <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Height="35" Margin="572,401,0,0" TextWrapping="NoWrap" Text="Password" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="214" Foreground="#FFCBC2C2" FontSize="16" GotFocus="textBoxPassword_GotFocus" LostFocus="textBoxPassword_LostFocus"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="572,499,0,0" TextWrapping="Wrap" Text="By clicking 'Sign up', you agree to our terms of service and privacy policy. We'll occasionally send you account related emails." VerticalAlignment="Top" Width="214" Height="67" Foreground="#FFCFC9C9"/>
+
+
     </Grid>
 </Page>
