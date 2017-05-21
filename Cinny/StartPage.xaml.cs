@@ -77,5 +77,10 @@ namespace Cinny
                 textBoxPassword.Foreground = new SolidColorBrush(color);
             }
         }
+
+        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.ShowswatchedPage);
+        }
     }
 }

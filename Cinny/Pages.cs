@@ -10,6 +10,7 @@ namespace Cinny
     {
         private static StartPage _startPage = new StartPage();
         private static SignupPage _signupPage = new SignupPage();
+        private static ShowswatchedPage _showswatchedPage = new ShowswatchedPage();
 
         public static StartPage StartPage
         {
@@ -24,6 +25,14 @@ namespace Cinny
             get
             {
                 return _signupPage;
+            }
+        }
+
+        public static ShowswatchedPage ShowswatchedPage
+        {
+            get
+            {
+                return _showswatchedPage;
             }
         }
     }
