@@ -1,0 +1,42 @@
+﻿<Page x:Class="Cinny.ShowssearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cinny"
+      mc:Ignorable="d" 
+      Title="Cinny" Height="768" Width="1366">
+
+    <Grid>
+        <Rectangle Fill="#FFF2F2F5" HorizontalAlignment="Left" Height="768" Margin="293,0,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="1073"/>
+        <Rectangle Fill="#FF42424F" HorizontalAlignment="Left" Height="768" Stroke="#FF42424F" VerticalAlignment="Top" Width="293"/>
+        <Button x:Name="buttonShowsPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonShowsSearch" Content="Search" HorizontalAlignment="Left" Margin="0,311,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesSearch" Content="Search" HorizontalAlignment="Left" Margin="0,499,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,405,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonShowsWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Width="293" Height="47" RenderTransformOrigin="0.484,-0.46" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,452,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Label x:Name="labelShows" Content="Shows" HorizontalAlignment="Left" Margin="0,170,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="-4.276,-0.135" Height="47" Width="293" Background="#FF171A4B" FontSize="20" Foreground="White" FontFamily="Blogger Sans Medium"/>
+        <Label x:Name="labelMovies" Content="Movies" HorizontalAlignment="Left" Margin="0,358,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="-4.276,-0.135" Height="47" Width="293" Background="#FF171A4B" FontSize="20" Foreground="White" FontFamily="Blogger Sans Medium"/>
+        <Rectangle Fill="#FF92B9B2" HorizontalAlignment="Left" Height="292" Margin="293,0,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="1073"/>
+        <Image HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="165" Source="Resources/peakyblinders.jpg" Margin="353,28,0,0"/>
+        <Label x:Name="labelPeaky" Content="Peaky Blinders, 2013 - " HorizontalAlignment="Left" Margin="551,18,0,0" VerticalAlignment="Top" Width="239" FontSize="24" FontFamily="Blogger Sans Medium"/>
+        <Label x:Name="labelPeakycreator" Content="Creator: Steven Knight" HorizontalAlignment="Left" Margin="1018,18,0,0" VerticalAlignment="Top" Width="149" Height="28" FontFamily="Blogger Sans" FontSize="16"/>
+        <Label x:Name="labelPeakystars" Content="Stars: Cillian Murphy, Paul Anderson, Joe Cole" HorizontalAlignment="Left" Margin="1018,46,0,0" VerticalAlignment="Top" Width="301" FontFamily="Blogger Sans" FontSize="16"/>
+        <TextBlock x:Name="textBlockPeakyinfo" HorizontalAlignment="Left" Margin="556,107,0,0" TextWrapping="Wrap" Text="A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world." VerticalAlignment="Top" Width="588" FontFamily="Blogger Sans" FontStyle="Italic" FontSize="18"/>
+        <Image HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="49" Source="Resources/imdb.png" Margin="556,240,0,0"/>
+        <Label x:Name="labelPeakygrade" Content=": 8,8/10" HorizontalAlignment="Left" Margin="605,236,0,0" VerticalAlignment="Top" Foreground="#FF3E3B32" FontSize="14" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="47" Source="Resources/amediateka.png" Margin="705,230,0,0"/>
+        <Button x:Name="buttonPeakywatch" Content=": Watch online" HorizontalAlignment="Left" Margin="757,242,0,0" VerticalAlignment="Top" Width="91" FontSize="14" FontFamily="Blogger Sans" BorderBrush="#00000000" Background="#FF92B9B2" FontWeight="Bold" Foreground="#FF3E3B32"/>
+        <Rectangle Fill="#FFB25938" HorizontalAlignment="Left" Height="292" Margin="293,287,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="1073"/>
+        <Image HorizontalAlignment="Left" Height="249" VerticalAlignment="Top" Width="163" Source="Resources/friends.jpg" Margin="353,311,0,0"/>
+        <Label x:Name="labelFriends" Content="Friends, 1994 - 2004" HorizontalAlignment="Left" Margin="551,302,0,0" VerticalAlignment="Top" Width="223" FontSize="24" FontFamily="Blogger Sans Medium" Foreground="White"/>
+        <Label x:Name="labelFriendscreator" Content="Creator: David Crane, Marta Kauffman" HorizontalAlignment="Left" Margin="1018,304,0,0" VerticalAlignment="Top" Width="252" Height="28" FontFamily="Blogger Sans" FontSize="16" Foreground="White"/>
+        <Label x:Name="labelFriendsinfo" Content="Stars: Jennifer Aniston, Courteney Cox, Lisa Kudrow" HorizontalAlignment="Left" Margin="1018,332,0,0" VerticalAlignment="Top" Width="338" FontFamily="Blogger Sans" FontSize="16" Foreground="White"/>
+        <TextBlock x:Name="textBlockFriendsinfo" HorizontalAlignment="Left" Margin="556,391,0,0" TextWrapping="Wrap" Text="Follows the personal and professional lives of six 20 to 30-something-year-old friends living in Manhattan." VerticalAlignment="Top" Width="588" FontFamily="Blogger Sans" FontStyle="Italic" FontSize="18" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="49" Source="Resources/imdb.png" Margin="556,533,0,0"/>
+        <Label x:Name="labelFriendsgrade" Content=": 9,0/10" HorizontalAlignment="Left" Margin="605,529,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="47" Source="Resources/amediateka.png" Margin="705,523,0,0"/>
+        <Button x:Name="buttonFriendswatch" Content=": Watch online" HorizontalAlignment="Left" Margin="757,534,0,0" VerticalAlignment="Top" Width="91" FontSize="14" FontFamily="Blogger Sans" BorderBrush="#00000000" Background="#FFB25938" FontWeight="Bold" Foreground="White"/>
+    </Grid>
+</Page>

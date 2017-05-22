@@ -10,8 +10,8 @@
     <Grid>
         <Rectangle Fill="#FF42424F" HorizontalAlignment="Left" Height="768" Stroke="#FF42424F" VerticalAlignment="Top" Width="293"/>
         <Button x:Name="buttonShowsPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
-        <Button x:Name="buttonShowsSearch" Content="Search" HorizontalAlignment="Left" Margin="0,311,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
-        <Button x:Name="buttonMoviesSearch" Content="Search" HorizontalAlignment="Left" Margin="0,499,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonShowsSearch" Content="Search" HorizontalAlignment="Left" Margin="0,311,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans" Click="buttonShowsSearch_Click"/>
+        <Button x:Name="buttonMoviesSearch" Content="Search" HorizontalAlignment="Left" Margin="0,499,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans" Click="buttonMoviesSearch_Click"/>
         <Button x:Name="buttonMoviesWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,405,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
         <Button x:Name="buttonShowsWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Width="293" Height="47" RenderTransformOrigin="0.484,-0.46" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
         <Button x:Name="buttonMoviesPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,452,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
@@ -26,9 +26,10 @@
         <TextBox x:Name="textBoxSeason" HorizontalAlignment="Left" Height="33" Margin="472,118,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
         <TextBox x:Name="textBoxEpisode" HorizontalAlignment="Left" Height="33" Margin="472,151,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
         <TextBox x:Name="textBoxTime" HorizontalAlignment="Left" Height="33" Margin="472,184,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
-        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="394,233,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="281" Margin="394,292,0,0" VerticalAlignment="Top" Width="870"/>
+        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="394,233,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium" Click="buttonAdd_Click"/>
         <Button x:Name="buttonSave" Content="Save" HorizontalAlignment="Left" Margin="394,599,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium"/>
         <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="33" Margin="942,233,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="322" FontSize="20" FontFamily="Blogger Sans"/>
+        <Image HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" Source="Resources/searchicon.png" Margin="904,233,0,0"/>
+        <TextBox x:Name="textBoxList" HorizontalAlignment="Left" Height="281" Margin="394,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="870" FontSize="18" FontFamily="Blogger Sans"/>
     </Grid>
 </Page>

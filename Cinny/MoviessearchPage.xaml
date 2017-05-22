@@ -1,0 +1,32 @@
+﻿<Page x:Class="Cinny.MoviessearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cinny"
+      mc:Ignorable="d" 
+      Title="Cinny" Height="768" Width="1366">
+
+    <Grid>
+        <Rectangle Fill="#FFF2F2F5" HorizontalAlignment="Left" Height="768" Margin="293,0,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="1073"/>
+        <Rectangle Fill="#FF42424F" HorizontalAlignment="Left" Height="768" Stroke="#FF42424F" VerticalAlignment="Top" Width="293"/>
+        <Button x:Name="buttonShowsPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,264,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonShowsSearch" Content="Search" HorizontalAlignment="Left" Margin="0,311,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesSearch" Content="Search" HorizontalAlignment="Left" Margin="0,499,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,405,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonShowsWatched" Content="Watched" HorizontalAlignment="Left" Margin="0,217,0,0" VerticalAlignment="Top" Width="293" Height="47" RenderTransformOrigin="0.484,-0.46" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonMoviesPlans" Content="Plans" HorizontalAlignment="Left" Margin="0,452,0,0" VerticalAlignment="Top" Width="293" Height="47" Background="#FF5B5B8B" BorderBrush="#00000000" Foreground="White" FontSize="20" FontFamily="Blogger Sans"/>
+        <Label x:Name="labelShows" Content="Shows" HorizontalAlignment="Left" Margin="0,170,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="-4.276,-0.135" Height="47" Width="293" Background="#FF171A4B" FontSize="20" Foreground="White" FontFamily="Blogger Sans Medium"/>
+        <Label x:Name="labelMovies" Content="Movies" HorizontalAlignment="Left" Margin="0,358,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" RenderTransformOrigin="-4.276,-0.135" Height="47" Width="293" Background="#FF171A4B" FontSize="20" Foreground="White" FontFamily="Blogger Sans Medium"/>
+        <Rectangle Fill="#FFDEE0B4" HorizontalAlignment="Left" Height="292" Margin="293,0,0,0" Stroke="#00000000" VerticalAlignment="Top" Width="1073"/>
+        <Image HorizontalAlignment="Left" Height="236" VerticalAlignment="Top" Width="158" Source="Resources/whiplash.jpg" Margin="353,28,0,0"/>
+        <Label x:Name="labelWhiplash" Content="Whiplash, 2014" HorizontalAlignment="Left" Margin="551,18,0,0" VerticalAlignment="Top" Width="168" FontSize="24" FontFamily="Blogger Sans Medium" Foreground="#FF0B0B40"/>
+        <Label x:Name="labelWhiplashcreator" Content="Director: Damien Chazelle" HorizontalAlignment="Left" Margin="1018,18,0,0" VerticalAlignment="Top" Width="149" Height="28" FontFamily="Blogger Sans" FontSize="16" Foreground="#FF0B0B40"/>
+        <Label x:Name="labelWhiplashstars" Content="Stars: Miles Teller, J.K. Simmons, Melissa Benoist" HorizontalAlignment="Left" Margin="1018,46,0,0" VerticalAlignment="Top" Width="320" FontFamily="Blogger Sans" FontSize="16" Foreground="#FF0B0B40"/>
+        <TextBlock x:Name="textBlockWhiplashinfo" HorizontalAlignment="Left" Margin="556,107,0,0" TextWrapping="Wrap" Text="A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential." VerticalAlignment="Top" Width="588" FontFamily="Blogger Sans" FontStyle="Italic" FontSize="18" Foreground="#FF0B0B40"/>
+        <Image HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="49" Source="Resources/imdb.png" Margin="556,240,0,0"/>
+        <Label x:Name="labelWhiplashgrade" Content=": 8,5/10" HorizontalAlignment="Left" Margin="605,236,0,0" VerticalAlignment="Top" Foreground="#FF0B0B40" FontSize="14" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="47" Source="Resources/amediateka.png" Margin="705,230,0,0"/>
+        <Button x:Name="buttonWhiplashwatch" Content=": Watch online" HorizontalAlignment="Left" Margin="757,242,0,0" VerticalAlignment="Top" Width="91" FontSize="14" FontFamily="Blogger Sans" BorderBrush="#00000000" Background="#FFDEE0B4" FontWeight="Bold" Foreground="#FF0B0B40" Click="buttonWhiplashwatch_Click"/>
+    </Grid>
+</Page>

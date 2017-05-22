@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Cinny
 {
@@ -23,6 +24,21 @@ namespace Cinny
         public ShowswatchedPage()
         {
             InitializeComponent();
+        }
+
+        private void buttonAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void buttonShowsSearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.ShowssearchPage);
+        }
+
+        private void buttonMoviesSearch_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(Pages.MoviessearchPage);
         }
     }
 }

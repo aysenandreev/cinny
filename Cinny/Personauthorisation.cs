@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Cinny
 {
     [Serializable]
-public class Person
+    class Personauthorisation
     {
         private string _email;
 
@@ -25,7 +25,7 @@ public class Person
             set { _password = value; }
         }
 
-        public Person(string email, string password)
+        public Personauthorisation(string email, string password)
         {
             _email = email;
             _password = password;

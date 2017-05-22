@@ -76,29 +76,6 @@ namespace Cinny
             }
         }
 
-        bool _nameEntered = false;
-
-        private void textBoxName_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (!_nameEntered)
-            {
-                textBoxName.Text = "";
-                textBoxName.Foreground = new SolidColorBrush(Colors.Black);
-            }
-        }
-
-        private void textBoxName_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(textBoxName.Text))
-                _nameEntered = true;
-            else
-            {
-                textBoxName.Text = "Name";
-                _nameEntered = false;
-                textBoxName.Foreground = new SolidColorBrush(color);
-            }
-        }
-
         private void buttonLogin1_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(Pages.StartPage);
@@ -106,16 +83,9 @@ namespace Cinny
 
         List<Person> list = new List<Person>();
 
-        private string CalculateHash(string password)
-        {
-            MD5 md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
-            return Convert.ToBase64String(hash);
-        }
-
         private void buttonSignup1_Click(object sender, RoutedEventArgs e)
         {
-            var person = new Person(textBoxName.Text, textBoxEmail.Text, CalculateHash(textBoxPassword.Text));
+            var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
             list.Add(person);
 
 

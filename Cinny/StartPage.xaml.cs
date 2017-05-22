@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace Cinny
 {
@@ -80,7 +83,28 @@ namespace Cinny
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(Pages.ShowswatchedPage);
+            using (FileStream fs = new FileStream("../../base.dat", FileMode.Open, FileAccess.Read))
+            {
+                var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
+                try
+                {
+                    List<Person> list = new List<Person>();
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    list = (List<Person>)formatter.Deserialize(fs);
+                    if (textBoxEmail.Text == person.Email && textBoxPassword.Text == person.Password)
+                    {
+                        NavigationService.Navigate(Pages.ShowswatchedPage);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something gone wrong. Check your data again");
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Something gone wrong. Check your data again");
+                }
+            }
         }
     }
 }

@@ -11,6 +11,8 @@ namespace Cinny
         private static StartPage _startPage = new StartPage();
         private static SignupPage _signupPage = new SignupPage();
         private static ShowswatchedPage _showswatchedPage = new ShowswatchedPage();
+        private static ShowssearchPage _showssearchPage = new ShowssearchPage();
+        private static MoviessearchPage _moviessearchPage = new MoviessearchPage();
 
         public static StartPage StartPage
         {
@@ -33,6 +35,22 @@ namespace Cinny
             get
             {
                 return _showswatchedPage;
+            }
+        }
+
+        public static ShowssearchPage ShowssearchPage
+        {
+            get
+            {
+                return _showssearchPage;
+            }
+        }
+
+        public static MoviessearchPage MoviessearchPage
+        {
+            get
+            {
+                return _moviessearchPage;
             }
         }
     }
