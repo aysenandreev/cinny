@@ -28,5 +28,6 @@
         <Label x:Name="labelWhiplashgrade" Content=": 8,5/10" HorizontalAlignment="Left" Margin="605,236,0,0" VerticalAlignment="Top" Foreground="#FF0B0B40" FontSize="14" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="47" Source="Resources/amediateka.png" Margin="705,230,0,0"/>
         <Button x:Name="buttonWhiplashwatch" Content=": Watch online" HorizontalAlignment="Left" Margin="757,242,0,0" VerticalAlignment="Top" Width="91" FontSize="14" FontFamily="Blogger Sans" BorderBrush="#00000000" Background="#FFDEE0B4" FontWeight="Bold" Foreground="#FF0B0B40" Click="buttonWhiplashwatch_Click"/>
+        <Label x:Name="labelWhiplashcreator_Copy" Content="Drama, Music" HorizontalAlignment="Left" Margin="551,46,0,0" VerticalAlignment="Top" Width="98" Height="28" FontFamily="Blogger Sans" FontSize="16" Foreground="#FF0B0B40"/>
     </Grid>
 </Page>

@@ -74,7 +74,7 @@
       <DependentUpon>MoviessearchPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
-    <Compile Include="Personauthorisation.cs" />
+    <Compile Include="Shows.cs" />
     <Compile Include="ShowssearchPage.xaml.cs">
       <DependentUpon>ShowssearchPage.xaml</DependentUpon>
     </Compile>

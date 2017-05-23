@@ -38,5 +38,7 @@
         <Label x:Name="labelFriendsgrade" Content=": 9,0/10" HorizontalAlignment="Left" Margin="605,529,0,0" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="47" Source="Resources/amediateka.png" Margin="705,523,0,0"/>
         <Button x:Name="buttonFriendswatch" Content=": Watch online" HorizontalAlignment="Left" Margin="757,534,0,0" VerticalAlignment="Top" Width="91" FontSize="14" FontFamily="Blogger Sans" BorderBrush="#00000000" Background="#FFB25938" FontWeight="Bold" Foreground="White"/>
+        <Label x:Name="labelPeakygenre" Content="Crime, Drama" HorizontalAlignment="Left" Margin="551,49,0,0" VerticalAlignment="Top" Width="97" Height="28" FontFamily="Blogger Sans" FontSize="16"/>
+        <Label x:Name="labelFriendsgenre" Content="Comedy, Romance" HorizontalAlignment="Left" Margin="551,334,0,0" VerticalAlignment="Top" Width="338" FontFamily="Blogger Sans" FontSize="16" Foreground="White"/>
     </Grid>
 </Page>

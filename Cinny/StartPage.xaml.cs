@@ -81,29 +81,34 @@ namespace Cinny
             }
         }
 
+        private string CalculateHash(string password)
+        {
+            MD5 md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+            return Convert.ToBase64String(hash);
+        }
+
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
-            using (FileStream fs = new FileStream("../../base.dat", FileMode.Open, FileAccess.Read))
+            if ((textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
             {
-                var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
-                try
+                string[] line = File.ReadAllLines("../../base.txt");
+                for (int i = 0; i < line.Length; i++)
                 {
-                    List<Person> list = new List<Person>();
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    list = (List<Person>)formatter.Deserialize(fs);
-                    if (textBoxEmail.Text == person.Email && textBoxPassword.Text == person.Password)
+                    string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    if ((textBoxEmail.Text == items[0]) && (CalculateHash(textBoxPassword.Text) == items[1]))
                     {
                         NavigationService.Navigate(Pages.ShowswatchedPage);
                     }
                     else
                     {
-                        MessageBox.Show("Something gone wrong. Check your data again");
+                        MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-                catch
-                {
-                    MessageBox.Show("Something gone wrong. Check your data again");
-                }
+            }             
+            else
+            {
+                MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

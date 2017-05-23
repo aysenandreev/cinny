@@ -85,25 +85,24 @@ namespace Cinny
 
         private void buttonSignup1_Click(object sender, RoutedEventArgs e)
         {
-            var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
-            list.Add(person);
-
-
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fs = new FileStream("../../base.dat", FileMode.OpenOrCreate))
+            if ((textBoxEmail.Text != "") && (textBoxPassword.Text != "") && (textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
             {
-                try
+                var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
+                list.Add(person);
+                using (FileStream fs = new FileStream("../../base.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
-                    list = (List<Person>)formatter.Deserialize(fs);
-                }
-                catch
-                {
-                    list = new List<Person>();
+                    using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            sw.WriteLine(list[i].Show());                  
+                        }
+                    }
                 }
             }
-            using (FileStream fs = new FileStream("../../base.dat", FileMode.Open))
+            else
             {
-                formatter.Serialize(fs, list);
+                MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }
