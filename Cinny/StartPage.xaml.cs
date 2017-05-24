@@ -98,6 +98,27 @@ namespace Cinny
                     string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     if ((textBoxEmail.Text == items[0]) && (CalculateHash(textBoxPassword.Text) == items[1]))
                     {
+                        try
+                        {
+                            Pages.ShowswatchedPage.listBoxList.Items.Clear();
+                            using (FileStream fs3 = new FileStream("../../showslist.dat", FileMode.Open))
+                            {
+                                using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
+                                {
+                                    string line2;
+                                    while ((line2 = sr3.ReadLine()) != null)
+                                    {
+                                        Pages.ShowswatchedPage.listBoxList.Items.Add(line2);
+                                    }
+                                }
+                            }
+                        }
+
+                        catch
+                        {
+                            NavigationService.Navigate(Pages.ShowswatchedPage);
+                        }
+
                         NavigationService.Navigate(Pages.ShowswatchedPage);
                     }
                     else

@@ -53,7 +53,7 @@ namespace Cinny
 
         public string Show()
         {
-            return string.Format("{0} {1} {2} {3}", Name, Season, Episode, Time);
+            return string.Format("* {0}, season {1}, episode {2}, {3}", Name, Season, Episode, Time);
         }
     }
 }

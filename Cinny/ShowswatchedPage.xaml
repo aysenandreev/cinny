@@ -26,10 +26,11 @@
         <TextBox x:Name="textBoxSeason" HorizontalAlignment="Left" Height="33" Margin="472,118,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
         <TextBox x:Name="textBoxEpisode" HorizontalAlignment="Left" Height="33" Margin="472,151,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
         <TextBox x:Name="textBoxTime" HorizontalAlignment="Left" Height="33" Margin="472,184,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="93" FontFamily="Blogger Sans" FontSize="20"/>
-        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="394,233,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium" Click="buttonAdd_Click"/>
-        <Button x:Name="buttonSave" Content="Save" HorizontalAlignment="Left" Margin="394,599,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium"/>
+        <Button x:Name="buttonSave" Content="Save" HorizontalAlignment="Left" Margin="394,233,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium" Click="buttonSave_Click"/>
+        <Button x:Name="buttonSavelist" Content="Save list" HorizontalAlignment="Left" Margin="394,599,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium" Click="buttonSavelist_Click"/>
         <TextBox x:Name="textBoxSearch" HorizontalAlignment="Left" Height="33" Margin="942,233,0,0" TextWrapping="Wrap" Text="" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="322" FontSize="20" FontFamily="Blogger Sans"/>
         <Image HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="33" Source="Resources/searchicon.png" Margin="904,233,0,0"/>
         <ListBox x:Name="listBoxList" HorizontalAlignment="Left" Height="281" Margin="394,292,0,0" VerticalAlignment="Top" Width="870" FontSize="18" FontFamily="Blogger Sans"/>
+        <Button x:Name="buttonAddtolist" Content="Add to list" HorizontalAlignment="Left" Margin="490,233,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.733,0.55" Height="31" FontSize="16" FontFamily="Blogger Sans Medium" Click="buttonAddtolist_Click"/>
     </Grid>
 </Page>
