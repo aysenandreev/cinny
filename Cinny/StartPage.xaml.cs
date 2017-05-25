@@ -95,6 +95,7 @@ namespace Cinny
             return Convert.ToBase64String(hash);
         }
 
+
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
             if ((textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
