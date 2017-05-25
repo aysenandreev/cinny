@@ -70,11 +70,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Movies.cs" />
+    <Compile Include="Moviesplans.cs" />
+    <Compile Include="MoviesplansPage.xaml.cs">
+      <DependentUpon>MoviesplansPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MoviessearchPage.xaml.cs">
       <DependentUpon>MoviessearchPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MovieswatchedPage.xaml.cs">
+      <DependentUpon>MovieswatchedPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Shows.cs" />
+    <Compile Include="Showsplans.cs" />
+    <Compile Include="ShowsplansPage.xaml.cs">
+      <DependentUpon>ShowsplansPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowssearchPage.xaml.cs">
       <DependentUpon>ShowssearchPage.xaml</DependentUpon>
     </Compile>
@@ -100,7 +112,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MoviesplansPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MoviessearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MovieswatchedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowsplansPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

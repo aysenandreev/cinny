@@ -18,25 +18,25 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace Cinny
 {
     /// <summary>
-    /// Логика взаимодействия для ShowsSearch.xaml
+    /// Логика взаимодействия для ShowsplansPage.xaml
     /// </summary>
-    public partial class ShowswatchedPage : Page
+    public partial class ShowsplansPage : Page
     {
-        public ShowswatchedPage()
+        public ShowsplansPage()
         {
             InitializeComponent();
         }
 
-        List<Shows> list = new List<Shows>();
+        List<Showsplans> list = new List<Showsplans>();
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
-            using (FileStream fs = new FileStream("../../shows.dat", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("../../showsplans.dat", FileMode.OpenOrCreate))
             {
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
-                    Shows example = new Shows(textBoxShowname.Text, textBoxSeason.Text, textBoxEpisode.Text, textBoxTime.Text);
+                    Showsplans example = new Showsplans(textBoxShowname.Text, textBoxSeason.Text);
                     list.Add(example);
                     formatter.Serialize(fs, list);
                 }
@@ -46,14 +46,14 @@ namespace Cinny
         private void buttonAddtolist_Click(object sender, RoutedEventArgs e)
         {
             listBoxList.Items.Clear();
-            using (FileStream fs = new FileStream("../../shows.dat", FileMode.Open))
+            using (FileStream fs = new FileStream("../../showsplans.dat", FileMode.Open))
             {
                 using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                 {
-                    if (File.Exists("../../showslist.dat"))
+                    if (File.Exists("../../showsplanslist.dat"))
                     {
                         listBoxList.Items.Clear();
-                        using (FileStream fs2 = new FileStream("../../showslist.dat", FileMode.Open))
+                        using (FileStream fs2 = new FileStream("../../showsplanslist.dat", FileMode.Open))
                         {
                             using (StreamReader sr2 = new StreamReader(fs2, Encoding.UTF8))
                             {
@@ -66,10 +66,10 @@ namespace Cinny
                         }
                     }
                     BinaryFormatter formatter = new BinaryFormatter();
-                    list = (List<Shows>)formatter.Deserialize(fs);
+                    list = (List<Showsplans>)formatter.Deserialize(fs);
                     for (int i = 0; i < list.Count; i++)
                     {
-                        listBoxList.Items.Add(list[i].Show());
+                        listBoxList.Items.Add(list[i].ShowPlans());
                     }
                 }
             }
@@ -87,7 +87,7 @@ namespace Cinny
 
         private void buttonSavelist_Click(object sender, RoutedEventArgs e)
         {
-            using (FileStream fs = new FileStream("../../showslist.dat", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("../../showsplanslist.dat", FileMode.OpenOrCreate))
             {
                 using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                 {
@@ -104,13 +104,13 @@ namespace Cinny
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
             listBoxList.Items.Clear();
-            File.WriteAllText("../../showslist.dat", string.Empty);
+            File.WriteAllText("../../showsplanslist.dat", string.Empty);
         }
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
             listBoxList.Items.Clear();
-            string[] line = File.ReadAllLines("../../showslist.dat");
+            string[] line = File.ReadAllLines("../../showsplanslist.dat");
             for (int i = 0; i < line.Length; i++)
             {
                 if (line[i].Contains(textBoxSearch.Text) == true)
@@ -118,31 +118,6 @@ namespace Cinny
                     listBoxList.Items.Add(line[i]);
                 }
             }
-        }
-
-        private void buttonShowsPlans_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Pages.ShowsplansPage.listBoxList.Items.Clear();
-                using (FileStream fs3 = new FileStream("../../showsplanslist.dat", FileMode.Open))
-                {
-                    using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
-                    {
-                        string line2;
-                        while ((line2 = sr3.ReadLine()) != null)
-                        {
-                            Pages.ShowsplansPage.listBoxList.Items.Add(line2);
-                        }
-                    }
-                }
-            }
-
-            catch
-            {
-                NavigationService.Navigate(Pages.ShowsplansPage);
-            }
-            NavigationService.Navigate(Pages.ShowsplansPage);
         }
 
         private void buttonMoviesWatched_Click(object sender, RoutedEventArgs e)
@@ -168,6 +143,32 @@ namespace Cinny
                 NavigationService.Navigate(Pages.MovieswatchedPage);
             }
             NavigationService.Navigate(Pages.MovieswatchedPage);
+        }
+
+        private void buttonShowsWatched_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Pages.ShowswatchedPage.listBoxList.Items.Clear();
+                using (FileStream fs3 = new FileStream("../../showslist.dat", FileMode.Open))
+                {
+                    using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
+                    {
+                        string line2;
+                        while ((line2 = sr3.ReadLine()) != null)
+                        {
+                            Pages.ShowswatchedPage.listBoxList.Items.Add(line2);
+                        }
+                    }
+                }
+            }
+
+            catch
+            {
+                NavigationService.Navigate(Pages.ShowswatchedPage);
+            }
+
+            NavigationService.Navigate(Pages.ShowswatchedPage);
         }
 
         private void buttonMoviesPlans_Click(object sender, RoutedEventArgs e)

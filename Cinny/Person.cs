@@ -32,13 +32,6 @@ public class Person
             _password = password;
         }
 
-        //private string CalculateHash(string password)
-        //{
-        //    MD5 md5 = MD5.Create();
-        //    var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
-        //    return Convert.ToBase64String(hash);
-        //}
-
         public string Show()
         {
             return string.Format("{0} {1}",  Email, Password);
