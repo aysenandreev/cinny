@@ -40,7 +40,7 @@ namespace Cinny
                     list.Add(example);
                     formatter.Serialize(fs, list);
                 }
-            }           
+            }
         }
 
         private void buttonAddtolist_Click(object sender, RoutedEventArgs e)
@@ -61,7 +61,7 @@ namespace Cinny
                                 while ((line = sr2.ReadLine()) != null)
                                 {
                                     listBoxList.Items.Add(line);
-                                }                       
+                                }
                             }
                         }
                     }
@@ -97,6 +97,43 @@ namespace Cinny
                         listBoxList.SelectedIndex = i;
                         sw.WriteLine(listBoxList.SelectedItem.ToString());
                     }
+                }
+            }
+        }
+
+        private void buttonDelete_Click(object sender, RoutedEventArgs e)
+        {
+            listBoxList.Items.Clear();
+            File.WriteAllText("../../showslist.dat", string.Empty);
+        }
+
+        private void buttonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            //listBoxList.Items.Clear();
+            //List<Shows> showslist = new List<Shows>();
+            //string[] line = File.ReadAllLines("../../showslist.dat"); 
+            //for (int i = 0; i < line.Length; i++)
+            //{
+            //    string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            //    Shows example = new Shows(items[0], items[1], items[2], items[3]);
+            //    showslist.Add(example);
+            //}
+            //for (int j = 0; j < showslist.Count; j++)
+            //{
+            //    if (showslist[j].Name == textBoxSearch.Text)
+            //        {
+            //        listBoxList.Items.Add(showslist[j].Show());
+            //        }
+            //}
+            listBoxList.Items.Clear();
+            string[] line = File.ReadAllLines("../../showslist.dat");
+            for (int i = 0; i < line.Length; i++)
+            {
+                //string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                //Shows example = new Shows(items[0], items[1], items[2], items[3]);
+                if (line[i].Contains(textBoxSearch.Text) == true)
+                {
+                    listBoxList.Items.Add(line[i]);
                 }
             }
         }

@@ -87,18 +87,17 @@ namespace Cinny
         {
             if ((textBoxEmail.Text != "") && (textBoxPassword.Text != "") && (textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
             {
-                var person = new Person(textBoxEmail.Text, textBoxPassword.Text);
-                list.Add(person);
-                using (FileStream fs = new FileStream("../../base.txt", FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                {
-                    using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                    using (FileStream fs = new FileStream("../../base.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
-                        for (int i = 0; i < list.Count; i++)
+                        using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                         {
-                            sw.WriteLine(list[i].Show());                  
+                            BinaryFormatter formatter = new BinaryFormatter();
+                            Person example = new Person(textBoxEmail.Text, textBoxPassword.Text);
+                            list.Add(example);
+                            formatter.Serialize(fs, list);
+                            MessageBox.Show("Signing up has passed successfully!");
                         }
                     }
-                }
             }
             else
             {

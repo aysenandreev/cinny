@@ -81,52 +81,97 @@ namespace Cinny
             }
         }
 
-        private string CalculateHash(string password)
-        {
-            MD5 md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
-            return Convert.ToBase64String(hash);
-        }
+        //private string CalculateHash(string password)
+        //{
+        //    MD5 md5 = MD5.Create();
+        //    var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+        //    return Convert.ToBase64String(hash);
+        //}
 
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
             if ((textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
             {
-                string[] line = File.ReadAllLines("../../base.txt");
-                for (int i = 0; i < line.Length; i++)
+                //string[] line = File.ReadAllLines("../../base.txt");
+                //for (int i = 0; i < line.Length; i++)
+                //{
+                //    string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                //    if ((textBoxEmail.Text == items[0]) && (CalculateHash(textBoxPassword.Text) == items[1]))
+                //    {
+                //        try
+                //        {
+                //            Pages.ShowswatchedPage.listBoxList.Items.Clear();
+                //            using (FileStream fs3 = new FileStream("../../showslist.dat", FileMode.Open))
+                //            {
+                //                using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
+                //                {
+                //                    string line2;
+                //                    while ((line2 = sr3.ReadLine()) != null)
+                //                    {
+                //                        Pages.ShowswatchedPage.listBoxList.Items.Add(line2);
+                //                    }
+                //                }
+                //            }
+                //        }
+
+                //        catch
+                //        {
+                //            NavigationService.Navigate(Pages.ShowswatchedPage);
+                //        }
+
+                //        NavigationService.Navigate(Pages.ShowswatchedPage);
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
+                //    }
+                //}
+                try
                 {
-                    string[] items = line[i].Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    if ((textBoxEmail.Text == items[0]) && (CalculateHash(textBoxPassword.Text) == items[1]))
+                    using (FileStream fs = new FileStream("../../base.dat", FileMode.Open, FileAccess.Read))
                     {
-                        try
+                        using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
                         {
-                            Pages.ShowswatchedPage.listBoxList.Items.Clear();
-                            using (FileStream fs3 = new FileStream("../../showslist.dat", FileMode.Open))
+                            List<Person> list;
+                            BinaryFormatter formatter = new BinaryFormatter();
+                            list = (List<Person>)formatter.Deserialize(fs);
+                            for (int i = 0; i < list.Count; i++)
                             {
-                                using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
+                                if ((list[i].Email == textBoxEmail.Text) && (list[i].Password == textBoxPassword.Text))
                                 {
-                                    string line2;
-                                    while ((line2 = sr3.ReadLine()) != null)
+                                    try
                                     {
-                                        Pages.ShowswatchedPage.listBoxList.Items.Add(line2);
+                                        Pages.ShowswatchedPage.listBoxList.Items.Clear();
+                                        using (FileStream fs3 = new FileStream("../../showslist.dat", FileMode.Open))
+                                        {
+                                            using (StreamReader sr3 = new StreamReader(fs3, Encoding.UTF8))
+                                            {
+                                                string line2;
+                                                while ((line2 = sr3.ReadLine()) != null)
+                                                {
+                                                    Pages.ShowswatchedPage.listBoxList.Items.Add(line2);
+                                                }
+                                            }
+                                        }
                                     }
+
+                                    catch
+                                    {
+                                        NavigationService.Navigate(Pages.ShowswatchedPage);
+                                    }
+
+                                    NavigationService.Navigate(Pages.ShowswatchedPage);
                                 }
                             }
                         }
-
-                        catch
-                        {
-                            NavigationService.Navigate(Pages.ShowswatchedPage);
-                        }
-
-                        NavigationService.Navigate(Pages.ShowswatchedPage);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-            }             
+                catch
+                {
+                    MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+                }
+                       
             else
             {
                 MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
