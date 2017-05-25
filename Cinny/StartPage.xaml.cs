@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Security.Cryptography;
+using System.Windows.Media.Animation;
 
 namespace Cinny
 {
@@ -26,6 +27,12 @@ namespace Cinny
         public StartPage()
         {
             InitializeComponent();
+
+            DoubleAnimation buttonAnimation = new DoubleAnimation();
+            buttonAnimation.From = buttonLogin.ActualWidth;
+            buttonAnimation.To = 214;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(2);
+            buttonLogin.BeginAnimation(Button.WidthProperty, buttonAnimation);
         }
 
         private void buttonSignup_Click(object sender, RoutedEventArgs e)
@@ -81,6 +88,13 @@ namespace Cinny
             }
         }
 
+        private string CalculateHash(string password)
+        {
+            MD5 md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+            return Convert.ToBase64String(hash);
+        }
+
         private void buttonLogin_Click(object sender, RoutedEventArgs e)
         {
             if ((textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
@@ -96,7 +110,7 @@ namespace Cinny
                             list = (List<Person>)formatter.Deserialize(fs);
                             for (int i = 0; i < list.Count; i++)
                             {
-                                if ((list[i].Email == textBoxEmail.Text) && (list[i].Password == textBoxPassword.Text))
+                                if ((list[i].Email == textBoxEmail.Text) && (list[i].Password == CalculateHash(textBoxPassword.Text)))
                                 {
                                     try
                                     {
@@ -113,7 +127,6 @@ namespace Cinny
                                             }
                                         }
                                     }
-
                                     catch
                                     {
                                         NavigationService.Navigate(Pages.ShowswatchedPage);
@@ -128,9 +141,8 @@ namespace Cinny
                 catch
                 {
                     MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
                 }
-                       
+            }                      
             else
             {
                 MessageBox.Show("Check your data again", "Something gone wrong", MessageBoxButton.OK, MessageBoxImage.Error);

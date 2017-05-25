@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Security.Cryptography;
+using System.Windows.Media.Animation;
 
 namespace Cinny
 {
@@ -26,6 +27,12 @@ namespace Cinny
         public SignupPage()
         {
             InitializeComponent();
+
+            DoubleAnimation buttonAnimation = new DoubleAnimation();
+            buttonAnimation.From = buttonSignup1.ActualWidth;
+            buttonAnimation.To = 214;
+            buttonAnimation.Duration = TimeSpan.FromSeconds(2);
+            buttonSignup1.BeginAnimation(Button.WidthProperty, buttonAnimation);
         }
 
         Color color = (Color)ColorConverter.ConvertFromString("#FFCBC2C2");
@@ -81,23 +88,29 @@ namespace Cinny
             NavigationService.Navigate(Pages.StartPage);
         }
 
-        List<Person> list = new List<Person>();
+        private string CalculateHash(string password)
+        {
+            MD5 md5 = MD5.Create();
+            var hash = md5.ComputeHash(Encoding.ASCII.GetBytes(password));
+            return Convert.ToBase64String(hash);
+        }
 
+        List<Person> list = new List<Person>();
         private void buttonSignup1_Click(object sender, RoutedEventArgs e)
         {
             if ((textBoxEmail.Text != "") && (textBoxPassword.Text != "") && (textBoxEmail.Text != "Email address") && (textBoxPassword.Text != "Password"))
             {
-                    using (FileStream fs = new FileStream("../../base.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                using (FileStream fs = new FileStream("../../base.dat", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                {
+                    using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
                     {
-                        using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
-                        {
-                            BinaryFormatter formatter = new BinaryFormatter();
-                            Person example = new Person(textBoxEmail.Text, textBoxPassword.Text);
-                            list.Add(example);
-                            formatter.Serialize(fs, list);
-                            MessageBox.Show("Signing up has passed successfully!");
-                        }
+                        BinaryFormatter formatter = new BinaryFormatter();
+                        Person example = new Person(textBoxEmail.Text, CalculateHash(textBoxPassword.Text));
+                        list.Add(example);
+                        formatter.Serialize(fs, list);
+                        MessageBox.Show("Signing up has passed successfully!");      
                     }
+                }
             }
             else
             {
